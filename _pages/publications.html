@@ -13,13 +13,14 @@ author_profile: true
 {% include base_path %}
 
 <h2>Peer-reviewed publications</h2>
-<p>\*equal contribution as co-first authors.</p>
+<p><strong>*</strong>equal contribution as co-first authors.</p>
 
-{% for post in site.publications %}
+{% for post in site.publications reversed %}
   {% if post.category == "journal-articles" %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
+
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}

@@ -50,6 +50,7 @@
           <p>
             {% if post.citation %}
               {% assign citation_bold = post.citation
+                | replace: "*", "<strong>*</strong>"
                 | replace: "Moon, J.", "<strong>Moon, J.</strong>" %}
               {{ citation_bold }}
             {% endif %}

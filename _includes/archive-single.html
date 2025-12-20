@@ -54,8 +54,13 @@
               {{ post.authors }}.
             {% endif %}
             {% if post.venue %}
-              <i>{{ post.venue }}</i>,
+              <i>{{ post.venue }}</i>
             {% endif %}
+            {% if post.date %}
+              ({{ post.date | default: "1900-01-01" | date: "%Y" }})
+            {% endif %}
+          </p>
+        {% endif %}
             {{ post.date | default: "1900-01-01" | date: "%Y" }}
           </p>
         {% elsif post.date %}

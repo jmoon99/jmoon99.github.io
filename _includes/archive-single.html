@@ -54,7 +54,9 @@
               {{ post.citation }}
             {% else %}
               {% if post.authors %}
-                {{ post.authors }}
+                {% assign authors_bold = post.authors
+                  | replace: "J Moon", "<strong>J Moon</strong>" %}
+                {{ authors_bold }}
               {% endif %}
               {% if post.date %}
                 ({{ post.date | default: "1900-01-01" | date: "%Y" }}).

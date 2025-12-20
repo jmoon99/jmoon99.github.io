@@ -5,34 +5,45 @@ permalink: /publications/
 author_profile: true
 ---
 
-\*equal contribution as co-first authors.
-
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
+
 {% include base_path %}
+
+## Peer-reviewed publications  
+\*equal contribution as co-first authors.
+
+{% for post in site.publications %}
+  {% if post.category == "journal-articles" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+  {% for category in site.publication_category %}
+    {% assign cat_key = category[0] %}
+    {% assign cat_conf = category[1] %}
+
+    {% comment %}
+      journal-articles는 이미 위에서 출력했으니 여기서는 건너뜀
+    {% endcomment %}
+    {% if cat_key == "journal-articles" %}
+      {% continue %}
+    {% endif %}
+
+    <h2>{{ cat_conf.title }}</h2>
+
+    {% for post in site.publications %}
+      {% if post.category == cat_key %}
+        {% include archive-single.html %}
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
     {% endfor %}
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
 {% endif %}
+
 
 
 

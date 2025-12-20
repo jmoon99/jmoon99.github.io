@@ -50,19 +50,37 @@
           <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
         {% elsif post.collection == 'publications' %}
           <p>
-            {% if post.authors %}
-              {{ post.authors }}.
-            {% endif %}
-            {% if post.venue %}
-              <i style="font-family: 'Times New Roman', Times, serif;">
+            {% if post.citation %}
+              {{ post.citation }}
+            {% else %}
+              {% if post.authors %}
+                {{ post.authors }}
+              {% endif %}
+              {% if post.date %}
+                ({{ post.date | default: "1900-01-01" | date: "%Y" }}).
+              {% endif %}
+              {% if post.title %}
+                {{ post.title }}.
+              {% endif %}
+              {% if post.venue %}
                 {{ post.venue }}
-              </i>
-            {% endif %}
-            {% if post.date %}
-              ({{ post.date | default: "1900-01-01" | date: "%Y" }})
+              {% endif %}
+              {% if post.volume %}
+                {{ " " }}{{ post.volume }}
+              {% endif %}
+              {% if post.pages %}
+                , {{ post.pages }}
+              {% endif %}
             {% endif %}
           </p>
+
+          {% if post.paperurl %}
+            <p>
+              <a href="{{ post.paperurl }}">Article link</a>
+            </p>
+          {% endif %}
         {% endif %}
+
             {{ post.date | default: "1900-01-01" | date: "%Y" }}
           </p>
         {% elsif post.date %}

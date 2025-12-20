@@ -53,6 +53,9 @@
                 | replace: "Moon, J.", "<strong>Moon, J.</strong>" %}
               {{ citation_bold }}
             {% endif %}
+            {% if post.paperurl %}
+              <a href="{{ post.paperurl }}">Link</a>
+            {% endif %}
           </p>
 
         {% elsif post.date %}

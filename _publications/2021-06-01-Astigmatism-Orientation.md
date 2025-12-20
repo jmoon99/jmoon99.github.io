@@ -11,4 +11,4 @@ citation: "Son, S., Moon, J., Kang, H., Kim, Y. J., & Lee, J. (2021). Induced as
 
 ---
 
-\*S. Son and J. Moon contributed equally as co-first authors.
+\*S Son and J Moon contributed equally as co-first authors.

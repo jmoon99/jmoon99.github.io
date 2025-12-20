@@ -54,7 +54,9 @@
               {{ post.authors }}.
             {% endif %}
             {% if post.venue %}
-              <i>{{ post.venue }}</i>
+              <i style="font-family: 'Times New Roman', Times, serif;">
+                {{ post.venue }}
+              </i>
             {% endif %}
             {% if post.date %}
               ({{ post.date | default: "1900-01-01" | date: "%Y" }})

@@ -5,9 +5,9 @@ collection: publications
 category: journal-articles
 permalink: /publication/2021-06-01-Astigmatism-Orientation
 date: 2021-06-01
-journal: "Human brain mapping"
+venue: "Human brain mapping"
 paperurl: "https://doi.org/10.1002/hbm.25550"
 citation: "Son, S., Moon, J., Kang, H., Kim, Y. J., & Lee, J. (2021). Induced astigmatism biases the orientation information represented in multivariate electroencephalogram activities. Human Brain Mapping."
 ---
 
-*S. Son* and *J. Moon* contributed equally as co-first authors.
+\*S. Son and J. Moon contributed equally as co-first authors.
